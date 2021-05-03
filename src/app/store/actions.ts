@@ -12,7 +12,10 @@ export enum CreditCardPaymentActionType {
 }
 
 export const load = createAction(CreditCardPaymentActionType.LOAD_CREDIT_CARD);
-
+export const changeValidationStatus = createAction(
+  '[Personal Page] Change Validation Status',
+  props<{ isLoading: boolean }>()
+);
 export const loadSuccess = createAction(
   CreditCardPaymentActionType.LOAD_CREDIT_CARD_SUCCESS,
   props<{ creditCardData: CreditCardState }>()

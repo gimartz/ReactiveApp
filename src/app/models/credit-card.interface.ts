@@ -3,6 +3,9 @@ export interface CreditCardState {
   cardHolder: string;
   expirationDate: Date;
   securityCode: string;
-  amount: number;
+  //amount: number;
+   MonthlyAdvertisingBudget: number;
+  PhoneNumber:number
+  Email : string;
 }
 

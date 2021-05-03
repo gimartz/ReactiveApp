@@ -12,7 +12,7 @@ export const initialCreditCardState: CreditCardState = {
   cardHolder: '',
   expirationDate: currentDate,
   securityCode: '',
-  amount: 0,
+  MonthlyAdvertisingBudget: 0,PhoneNumber:0, Email:'',
 }
 
 export interface PaymentState {
@@ -35,6 +35,17 @@ const featureReducer = createReducer(
     isLoading: true,
     error: null
   })),
+  on(
+    creditCardPaymentActions.changeValidationStatus,
+    (
+      state: PaymentState,
+      { isLoading }: ReturnType<typeof creditCardPaymentActions.changeValidationStatus>
+    ) => ({
+      ...state,
+      isLoading
+    })
+  ),
+
   on(creditCardPaymentActions.loadSuccess, (state, { creditCardData }) => {
     return  {
       ...state,
@@ -54,3 +65,5 @@ const featureReducer = createReducer(
 export function reducer(state: PaymentState, action: Action) {
   return featureReducer(state, action);
 }
+export const selectPersonalGroupData = (state: PaymentState) => state.creditCardData;
+export const selectPersonalGroupIsValid = (state: PaymentState) => state.isLoading;

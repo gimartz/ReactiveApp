@@ -1,50 +1,4 @@
-<!-- <div class="card">
-  <div class="card-header">
-    <strong>Credit Card</strong>
-</div>
-<div class="card-body">
-    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
 
-      <div class="form-group">
-        <label>Name on Card</label>
-        <input class="form-control" type="text" formControlName="nameOnCard" placeholder="John Krane" [ngClass]="{ 'is-invalid': (formControls.nameOnCard.dirty || formControls.nameOnCard.touched) && formControls.nameOnCard.errors }">
-        <div *ngIf="!formControls.nameOnCard.valid && (formControls.nameOnCard.dirty || formControls.nameOnCard.touched)" class="invalid-feedback">
-            <div *ngIf="formControls.nameOnCard.errors" class="alert alert-danger">Invalid Cardholder Name.</div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Card Number</label>
-        <input class="form-control" type="number" formControlName="cardNumber" placeholder="1234123412341234" [ngClass]="{ 'is-invalid': formControls.cardNumber.errors  && (formControls.cardNumber.dirty || formControls.cardNumber.touched)}">
-        <div *ngIf="!formControls.cardNumber.valid && (formControls.cardNumber.dirty || formControls.cardNumber.touched)" class="invalid-feedback">
-            <div *ngIf="formControls.cardNumber.errors" class="alert alert-danger">Invalid Card Number.</div>
-        </div>
-      </div>
-
-      <div class="form-group expiry">
-          <label>Date of Expiration</label>
-          <input  class="form-control month" type="number"  formControlName="expirationMonth" placeholder="12" [ngClass]="{ 'is-invalid': !formControls.expirationMonth.valid && (formControls.expirationMonth.dirty || formControls.expirationMonth.touched) }">
-          <input  class="form-control year"   type="number" formControlName="expirationYear" placeholder="2017" [ngClass]="{ 'is-invalid': formControls.expirationYear.errors && (formControls.expirationYear.dirty || formControls.expirationYear.touched) }">
-          <div *ngIf="( !formControls.expirationMonth.valid && (formControls.expirationMonth.dirty || formControls.expirationMonth.touched) ) || ( !formControls.expirationYear.valid && (formControls.expirationYear.dirty || formControls.expirationYear.touched))" class="invalid-feedback">
-              <div *ngIf="formControls.expirationMonth.errors || formControls.expirationYear.errors" class="alert alert-danger">Invalid Date of Expiration.</div>
-          </div>
-      </div>
-
-      <div class="form-group cvc">
-        <label>CVV/CVC</label>
-        <input class="form-control"   type="number" formControlName="cardCVVNumber" placeholder="123" [ngClass]="{ 'is-invalid': formControls.cardCVVNumber.errors && (formControls.cardCVVNumber.dirty || formControls.cardCVVNumber.touched) }">
-          <div *ngIf="!formControls.cardCVVNumber.valid && (formControls.cardCVVNumber.dirty || formControls.cardCVVNumber.touched)" class="invalid-feedback">
-              <div *ngIf="formControls.cardCVVNumber.errors" class="alert alert-danger">Invalid CVV / CVC Number.</div>
-          </div>
-      </div>
-
-      <div class="form-group">
-        <button type="submit" class="btn btn btn-success">Proceed</button>
-      </div>
-      <h3 class="center-block text-center">{{displayMessage}}</h3>
-    </form>
-  </div>
-</div> -->
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -56,11 +10,20 @@
     <fieldset>
       <legend>Credit Card Payment</legend>
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="card-holder-name">Amount</label>
+        <label class="col-sm-3 control-label" for="card-holder-name">Monthly Advertising Budget</label>
         <div class="col-sm-9">
           <input class="form-control" type="text" formControlName="amount" [ngClass]="{ 'is-invalid': (formControls.amount.dirty || formControls.amount.touched) && formControls.amount.errors }">
           <div *ngIf="!formControls.amount.valid && (formControls.amount.dirty || formControls.amount.touched)" class="invalid-feedback">
               <div *ngIf="formControls.amount.errors" class="alert alert-danger">Invalid Amount.</div>
+          </div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="card-holder-name">PhoneNumber</label>
+        <div class="col-sm-9">
+          <input class="form-control" type="text" formControlName="PhoneNumber" [ngClass]="{ 'is-invalid': (formControls.PhoneNumber.dirty || formControls.PhoneNumber.touched) && formControls.PhoneNumber.errors }">
+          <div *ngIf="!formControls.PhoneNumbert.valid && (formControls.PhoneNumber.dirty || formControls.PhoneNumber.touched)" class="invalid-feedback">
+              <div *ngIf="formControls.PhoneNumber.errors" class="alert alert-danger">Invalid PhoneNumber.</div>
           </div>
           </div>
       </div>
@@ -70,6 +33,15 @@
           <input class="form-control" type="text" formControlName="nameOnCard" placeholder="John Krane" [ngClass]="{ 'is-invalid': (formControls.nameOnCard.dirty || formControls.nameOnCard.touched) && formControls.nameOnCard.errors }">
           <div *ngIf="!formControls.nameOnCard.valid && (formControls.nameOnCard.dirty || formControls.nameOnCard.touched)" class="invalid-feedback">
               <div *ngIf="formControls.nameOnCard.errors" class="alert alert-danger">Invalid Cardholder Name.</div>
+          </div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="card-holder-name">Email address</label>
+        <div class="col-sm-9">
+          <input class="form-control" type="text" formControlName="email" placeholder="XXX@gmail.com" [ngClass]="{ 'is-invalid': (formControls.email.dirty || formControls.email.touched) && formControls.email.errors }">
+          <div *ngIf="!formControls.email.valid && (formControls.email.dirty || formControls.email.touched)" class="invalid-feedback">
+              <div *ngIf="formControls.email.errors" class="alert alert-danger">Invalid email.</div>
           </div>
           </div>
       </div>

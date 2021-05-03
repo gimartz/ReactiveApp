@@ -4,14 +4,16 @@ import { ToasterConfig } from 'angular2-toaster';
 import { Observable } from 'rxjs';
 import { CreditCardPaymentFacade } from './store/facade';
 import { CreditCardState } from './models/credit-card.interface';
-
+import {PaymentState} from './store/reducer';
+import {select, Store} from '@ngrx/store';
+import { merge } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'fe-test-eddy';
+  title = 'Nonye-App';
   toasterConfig: ToasterConfig;
   creditCard$: Observable<CreditCardState>;
 

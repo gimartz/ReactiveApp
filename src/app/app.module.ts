@@ -19,6 +19,7 @@ import { CreditCardPaymentFacade } from './store/facade'
 import { CommonModule } from '@angular/common';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { environment } from '../environments/environment';
     EffectsModule.forRoot(),
     StoreModule.forFeature(storeModuleConfiguration.moduleFeatureKey, storeModuleConfiguration.moduleReducers),
     EffectsModule.forFeature([CreditCardPaymentStoreEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [PaymentService, ToasterService, CreditCardPaymentFacade, CreditCardPaymentStoreEffects],
   bootstrap: [AppComponent]
